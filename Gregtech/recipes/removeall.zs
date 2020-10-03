@@ -23,7 +23,7 @@ for recipe in RecipeMaps.getCokeOvenRecipes() {
 recipes.removeAll();
 furnace.removeAll();
 
-RecipeMaps.STEAM_TURBINE_FUELS.removeRecipe(FuelRecipe.create(<liquid:steam> * 60, 1, 32));
+RecipeMaps.STEAM_TURBINE_FUELS.removeRecipe(RecipeMaps.STEAM_TURBINE_FUELS.findRecipe(32, <liquid:steam> * 60));
 
 
 var generatorDiesel = [] as ILiquidStack[];
