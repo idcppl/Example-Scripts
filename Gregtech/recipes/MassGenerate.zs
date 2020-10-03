@@ -6,6 +6,7 @@ import mods.gregtech.material.DustMaterial;
 import mods.gregtech.material.FluidMaterial;
 import mods.gregtech.material.GemMaterial;
 import mods.gregtech.material.RoughSolidMaterial;
+import crafttweaker.item.IItemStack;
 import scripts.statics.op;
 import scripts.statics.rm;
 import scripts.statics.circuits;
@@ -20,7 +21,7 @@ for mat in MaterialRegistry.getAllMaterials() {
 			.EUt(28)
 			.inputs(op.bolt(mat))
 			.property("circuit", 0)
-			.outputs(isNull(op.ring(mat)) ? null as IItemStack : op.ring(mat).firstItem as IItemStack)
+			.outputs(op.ring(mat).empty ? [null] as IItemStack[] : [op.ring(mat).firstItem] as IItemStack[])
 			.buildAndRegister();
 	}
 	/* To be more percise with generating recipes. */
